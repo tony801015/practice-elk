@@ -2,6 +2,8 @@
 
 The practice create simple and speed to usage ELK.
 
+## pre-prepare 
+- install docker/docker-compose
 
 ## Usage
 
@@ -9,10 +11,12 @@ The practice create simple and speed to usage ELK.
 ```
 bash start.sh
 ```
+Wait a few minutes... use link in the below  
 
-127.0.0.1:5601 kibana 
-127.0.0.1:9200 elasticsearch
-127.0.0.1:8080 nginx
+Link  
+[kibana](http://127.0.0.1:5601)  
+[elasticsearch](http://127.0.0.1:9200)  
+[nginx](http://127.0.0.1:8080)  
 
 ### stop
 ```
