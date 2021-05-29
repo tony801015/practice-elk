@@ -15,7 +15,7 @@ Wait a few minutes... use link in the below
 
 Link  
 [kibana](http://127.0.0.1:5601)  
-[elasticsearch](http://127.0.0.1:9200)  
+[elasticsearch](http://127.0.0.1:9200)  
 [nginx](http://127.0.0.1:8080)  
 
 ### stop
