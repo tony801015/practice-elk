@@ -2,7 +2,8 @@ filebeat.inputs:
 - type: log
   enabled: true
   paths:
-    - /var/log/nginx/access.log
+    - /var/log/nginx/*.log
+    # - /var/log/golang/*.log
 
 output.logstash:
   hosts: ["logstash:5044"]

@@ -6,10 +6,10 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./var:/var/log/nginx
+      - ./var/log/nginx:/var/log/nginx
   elasticsearch:  
     container_name: elasticsearch 
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.12.1 
+    image: "docker.elastic.co/elasticsearch/elasticsearch:${TAG}"
     ports:
       - "9200:9200" 
     restart: "always"
@@ -20,7 +20,7 @@ services:
      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml 
   kibana:  
     container_name: kibana   
-    image: docker.elastic.co/kibana/kibana:7.12.1
+    image: "docker.elastic.co/kibana/kibana:${TAG}"
     ports:
       - "5601:5601"   
     restart: "always"   
@@ -28,7 +28,7 @@ services:
       - ./kibana.yml:/usr/share/kibana/config/kibana.yml
   logstash: 
     container_name: logstash  
-    image: docker.elastic.co/logstash/logstash:7.12.1
+    image: "docker.elastic.co/logstash/logstash:${TAG}"
     restart: "always"    
     ports:
       - "5044:5044"
@@ -38,8 +38,8 @@ services:
       - ./logstash.yml:/usr/share/logstash/config/logstash.yml
   filebeat:
     container_name: filebeat
-    image: docker.elastic.co/beats/filebeat:7.12.1 
+    image: "docker.elastic.co/beats/filebeat:${TAG}" 
     restart: "always"
     volumes:
-      - ./var:/var/log/nginx
+      - ./var/log:/var/log
       - ./filebeat.yml:/usr/share/filebeat/filebeat.yml 
